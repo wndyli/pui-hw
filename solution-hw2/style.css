@@ -94,7 +94,6 @@ hr {
 }
 
 /* cart.html */
-
 .cartcontent {
     margin:0px 0px 20px 490px;
     display:flex;
@@ -162,6 +161,7 @@ hr {
     background-color:#ffff00;
 }
 
+/* product.html */
 .detailcontent {
     margin:0px 100px 0px 120px;
     display:flex;

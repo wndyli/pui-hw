@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+  </head>
+
+  <body>
+    <!-- header section -->
+    <div class="header">
+      <a href="index.html"><img src="assets/logo-01.svg" class="logo" alt="bun bun logo"></a>
+      <div class="headerright">
+        <div class="links">
+          <div class="linkstext">
+            <a href="cart.html" class="active">Products</a>
+          </div>
+          <div class="linkstext">
+            <a href="cart.html">Cart</a>
+          </div>
+        </div>
+        <hr>
+        <div class="description">Original Cinnamon Roll</div>
+      </div>
+    </div>
+
+    <!-- detail -->
+    <div class="detailcontent">
+      <img src="assets/original-cinnamon-roll.jpeg" class="leftpic" alt="original cinnamon roll">
+      <div class="detailright">
+        Customize our delicious, hand-made cinnamon roll to your liking!
+        <div class="choice">
+          <!-- updated for hw3 -->
+            <label>Glazing:
+              <select id="glazing">
+              </select>
+            </label>
+            <label>Pack Size:
+                <select id="pack">
+                </select>
+            </label>
+        </div>
+
+        <!-- checkout -->
+        <div class="endcheckout">
+          <div id="checkoutprice">$2.49</div>
+          <div class="hitcheckout">Add to Cart</div>
+        </div>
+      </div>
+    </div>
+  </body>  
+</html>

@@ -2,19 +2,19 @@
 let allGlazing = [
   {
     glazing: 'Keep Original',
-    price: 0.00,
+    price: 0.0,
   },
   {
     glazing: 'Sugar Milk',
-    price: 0.00,
+    price: 0.0,
   },
   {
     glazing: 'Vanilla Milk',
-    price: 1.00,
+    price: 0.5,
   },
   {
     glazing: 'Double Chocolate',
-    price: 1.50,
+    price: 1.5,
   },
 ];
 
@@ -35,7 +35,7 @@ let allPackSize = [
     {
       packSize: 12,
       priceAdaptation: 10,
-    },
+    }
   ];
 
 // glazing + pack size dropdown
@@ -81,8 +81,8 @@ function onSelectValueChange() {
   let price = document.querySelector('#checkoutprice');
 
   // gets the number value from glaze and pack
-  let glazePrice = parseInt(glazingChange.value);
-  let packPrice = parseInt(packChange.value);
+  let glazePrice = parseFloat(glazingChange.value);
+  let packPrice = parseFloat(packChange.value);
 
   // calculates the price
   let basePrice = 2.49;

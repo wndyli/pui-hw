@@ -2,19 +2,19 @@
 let allGlazing = [
   {
     glazing: 'Keep Original',
-    price: 0.0,
+    price: 0.00,
   },
   {
     glazing: 'Sugar Milk',
-    price: 0.0,
+    price: 0.00,
   },
   {
     glazing: 'Vanilla Milk',
-    price: 0.5,
+    price: 0.50,
   },
   {
     glazing: 'Double Chocolate',
-    price: 1.5,
+    price: 1.50,
   },
 ];
 

@@ -110,6 +110,7 @@ function onSelectValueChange() {
   price.innerText = fixedPrice;
 }
 
+// save all of the current product information into an instance of the class Roll
 class Roll {
   constructor(rollType, rollGlazing, packSize, basePrice) {
       this.type = rollType;
@@ -119,11 +120,13 @@ class Roll {
   }
 }
 
-let cart = [];
+// create an empty array called cart
+const cart = [];
 
 let addToCartButton = document.querySelector('#hitcheckout');
 addToCartButton.addEventListener("click", addRollToCart);
 
+// adds to the array cart
 function addRollToCart() {
     let glazingIndex = glazingChange.selectedIndex;
     let glazingOption = allGlazing[glazingIndex];
@@ -133,5 +136,7 @@ function addRollToCart() {
 
     let selectedRoll = new Roll(rollType, glazingOption.glazing, packOption.packSize, basePrice);
     cart.push(selectedRoll);
+
+    // print entire cart array to the console after everytime adding items
     console.log(cart);
 }

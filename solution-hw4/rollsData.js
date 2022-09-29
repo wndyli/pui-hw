@@ -1,4 +1,4 @@
-// database of rolls with price and image
+ // database of rolls with price and image
 const rolls = {
     "Original": {
         "basePrice": 2.49,

@@ -81,7 +81,7 @@ rollName.innerText = rollType + ' Cinnamon Roll';
 
 // updates cinnamon roll type
 const rollImage = document.querySelector('#leftpic');
-rollImage.src = '../assets/' + rollType + '-cinnamon-roll.jpeg';
+rollImage.src = 'assets/' + rollType + '-cinnamon-roll.jpeg';
 
 // updates cinnamon roll price
 const rollPrice = document.querySelector('#checkoutprice');

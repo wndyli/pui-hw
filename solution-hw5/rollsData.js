@@ -46,22 +46,22 @@ let allGlazing = [
     },
   ];
   
-// making an array of pack size options
-let allPackSize = [
-  {
-    packSize: 1,
-    priceAdaptation: 1,
-  },
-  {
-    packSize: 3,
-    priceAdaptation: 3,
-  },
-  {
-    packSize: 6,
-    priceAdaptation: 5,
-  },
-  {
-    packSize: 12,
-    priceAdaptation: 10,
-  }
-];
+  // making an array of pack size options
+  let allPackSize = [
+      {
+        packSize: 1,
+        priceAdaptation: 1,
+      },
+      {
+        packSize: 3,
+        priceAdaptation: 3,
+      },
+      {
+        packSize: 6,
+        priceAdaptation: 5,
+      },
+      {
+        packSize: 12,
+        priceAdaptation: 10,
+      }
+    ];

@@ -3,9 +3,9 @@ class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType; 
         this.glazing = rollGlazing;
-        this.size = packSize; 
+        this.size = packSize;
         this.basePrice = basePrice.toFixed(2);
-            
+
         this.element = null;
     }
 }
@@ -27,6 +27,7 @@ function createElement(roll) {
 
     roll.element = clone.querySelector('.cartcontent');
     
+    // taken and modified from lab 5
     const btnDelete = roll.element.querySelector('.cartlefttext');
     btnDelete.addEventListener('click', () => {
         deleteElement(roll);
@@ -48,13 +49,38 @@ function updateElement(roll) {
     const rollPackElement = roll.element.querySelector(".pack-size"); 
     const rollPriceElement = roll.element.querySelector(".rightmargin");
 
+    const calcPrice = calculatePrice(roll);
+
     // duplicates the cart content to the corresponding html elements
     rollImageElement.src = 'assets/' + rolls[roll.type].imageFile; 
     rollTypeElement.innerText = roll.type + ' Cinnamon Roll'; 
     rollGlazingElement.innerText = 'Glazing: ' + roll.glazing; 
     rollPackElement.innerText = 'Pack Size: ' + roll.size; 
-    rollPriceElement.innerText = '$ ' + roll.basePrice; 
+    rollPriceElement.innerText = '$ ' + calcPrice; 
+}
 
+// calculates total price of each roll selection with glaze + pack size modifications
+function calculatePrice(roll) {
+    // iterates through allGlazing to find if same glaze as roll's
+    // sets the glazingChange to the price difference
+    let glazingChange = 0;
+    for(const glazing of allGlazing) {
+        if(glazing.packSize == roll.glazing) {
+            glazingChange = glazing.price;
+        }
+    }
+
+    let packChange = 0;
+    for(const pack of allPackSize) {
+        if(pack.packSize == roll.size) {
+            packChange = pack.priceAdaptation;
+        }
+    }
+
+    // calculates price based up glaze + pack size changes
+    let calculatedPrice = (roll.basePrice + glazingChange) * packChange;
+
+    return calculatedPrice.toFixed(2);
 }
 
 // deletes roll dom object and removes it from set
@@ -66,9 +92,9 @@ function deleteElement(roll) {
 
 // creates four roll objects and add them to rollSet
 const rollOne = addNewRoll( "Original", "Sugar Milk", 1, 2.49);
-const rollTwo = addNewRoll( "Walnut", "Vanilla Milk", 12, 39.90);
-const rollThree = addNewRoll( "Raisin", "Sugar Milk", 3, 8.97);
-const rollFour = addNewRoll( "Apple", "Original", 3, 10.47);
+const rollTwo = addNewRoll( "Walnut", "Vanilla Milk", 12, 3.99);
+const rollThree = addNewRoll( "Raisin", "Sugar Milk", 3, 2.99);
+const rollFour = addNewRoll( "Apple", "Original", 3, 3.49);
 
 // adds individual roll to list of rolls
 for (const roll of rollSet) { 
@@ -81,7 +107,7 @@ function cartTotalPrice() {
     let price = 0;
 
     for(const roll of rollSet) {
-        price = price + parseFloat(roll.basePrice);
+        price = price + parseFloat(calculatePrice(roll));
     }
 
     totalPrice.innerText = "$ " + price.toFixed(2);

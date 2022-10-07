@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="rollsData.js"></script>
+    <script defer src="cart.js"></script>
+  </head>
+
+  <body>
+  <!-- header section -->
+    <div class="header">
+      <a href="index.html"><img src="assets/logo-01.svg" class="logo" alt="bun bun logo"></a>
+      <div class="headerright">
+        <div class="links">
+          <div class="linkstext">
+            <a href="index.html">Products</a>
+          </div>
+          <div class="linkstext">
+            <a href="cart.html" class="active">Cart</a>
+          </div>
+        </div>
+        <hr>
+        <div class="description">Shopping cart</div>
+      </div>
+    </div>
+
+    <!-- cart -->
+  <div id="roll-list">
+    <template id="roll-template">
+      <div class="cartcontent">
+      <div class="cartleft">
+        <img class="cartpic" src="assets/original-cinnamon-roll.jpeg" alt="original cinnamon roll">
+        <div class="cartlefttext"><u>Remove</u></div>
+      </div>
+      <div class="cartmid">
+        <div class="midmargin">
+          <div class="cinnamon-roll">Original Cinnamon Roll</div>
+          <div class="glazing-option">Glazing: Keep original</div>
+          <div class="pack-size">Pack Size: 1</div>
+        </div>
+      </div>
+      <div class="cartright">
+        <div class="rightmargin">$ 2.49</div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+    <!-- checkout section -->
+    <div class="checkout">
+      <hr class="short">
+      <div class="checkoutprice">
+        <div class="cartleft"></div>
+        <div class="cartmid">
+          <div class="totalmargin">Total</div>
+        </div>
+        <div class="totalprice">$29.94</div>
+      </div>
+      <div class="checkoutbox">Checkout</div>
+    </div>
+  </body>  
+</html>

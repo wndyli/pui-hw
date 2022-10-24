@@ -1,18 +1,3 @@
-class Roll { 
-    // creates a roll class
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.type = rollType; 
-        this.glazing = rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice.toFixed(2);
-
-        this.element = null;
-    }
-}
-
-// creates an empty set to represent cart
-const rollSet = new Set();
-
 // creates new roll objects and adds it to set
 function addNewRoll(rollType, rollGlazing, packSize, basePrice) {
     const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
@@ -91,11 +76,6 @@ function deleteElement(roll) {
     saveToLocalStorage();
 }
 
-// adds individual roll to list of rolls
-for (const roll of rollSet) { 
-    createElement(roll);
-}
-
 // calculates the total checkout price
 function cartTotalPrice() {
     retrieveFromLocalStorage();
@@ -111,23 +91,3 @@ function cartTotalPrice() {
 
 // calls to calculate price
 cartTotalPrice();
-
-function saveToLocalStorage() {
-  const cartArray = Array.from(rollSet);
-  const cartArrayString = JSON.stringify(cartArray);
-  localStorage.setItem('cartItems', cartArrayString);
-}
-
-function retrieveFromLocalStorage() {
-  const cartArrayString = localStorage.getItem('cartItems');
-  const cartArray = JSON.parse(cartArrayString);
-
-  for(const cartData of cartArray) {
-    const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
-    createElement(currRoll);
-  }
-}
- 
-if(localStorage.getItem('cartItems') != null) {
-    retrieveFromLocalStorage();
-}

@@ -66,3 +66,37 @@ let allGlazing = [
       }
 ];
 
+class Roll { 
+  // creates a roll class
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+      this.type = rollType; 
+      this.glazing = rollGlazing;
+      this.size = packSize;
+      this.basePrice = basePrice.toFixed(2);
+
+      this.element = null;
+  }
+}
+
+// creates an empty set to represent cart
+const rollSet = new Set();
+
+function saveToLocalStorage() {
+  const cartArray = Array.from(rollSet);
+  const cartArrayString = JSON.stringify(cartArray);
+  localStorage.setItem('cartItems', cartArrayString);
+}
+
+function retrieveFromLocalStorage() {
+  const cartArrayString = localStorage.getItem('cartItems');
+  const cartArray = JSON.parse(cartArrayString);
+
+  for(const cartData of cartArray) {
+    const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+    createElement(currRoll);
+  }
+}
+ 
+if(localStorage.getItem('cartItems') != null) {
+    retrieveFromLocalStorage();
+}

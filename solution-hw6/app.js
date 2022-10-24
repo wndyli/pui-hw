@@ -72,18 +72,8 @@ function onSelectValueChange() {
   price.innerText = fixedPrice;
 }
 
-// save all of the current product information into an instance of the class Roll
-class Roll {
-  constructor(rollType, rollGlazing, packSize, basePrice) {
-      this.type = rollType;
-      this.glazing =  rollGlazing;
-      this.size = packSize;
-      this.basePrice = basePrice;
-  }
-}
-
 // create an empty array called cart
-const cart = [];
+let cart = [];
 
 let addToCartButton = document.querySelector('#hitcheckout');
 addToCartButton.addEventListener("click", addRollToCart);

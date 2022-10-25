@@ -64,15 +64,13 @@ function calculatePrice(roll) {
 // deletes roll dom object and removes it from set
 function deleteElement(roll) {
     roll.element.remove();
-    rollSet.delete(roll);
-    cartTotalPrice();
-    saveToLocalStorage();
-}
 
-for(const cartData of cartArray) {
-    const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
-    createElement(currRoll);
-  }
+    let index = cartArray.indexOf(roll);
+
+    cartArray.splice(index, 1);
+    saveToLocalStorage();
+    cartTotalPrice();
+}
 
 // calculates the total checkout price
 function cartTotalPrice() {
@@ -80,7 +78,7 @@ function cartTotalPrice() {
     let totalPrice = document.querySelector('.totalprice');
     let price = 0;
 
-    for(const roll of rollSet) {
+    for(const roll of cartArray) {
         price = price + parseFloat(calculatePrice(roll));
     }
 
@@ -89,3 +87,7 @@ function cartTotalPrice() {
 
 // calls to calculate price
 cartTotalPrice();
+
+for(const cartData of cartArray) {
+    createElement(cartData);
+}

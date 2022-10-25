@@ -78,8 +78,7 @@ class Roll {
   }
 }
 
-// creates an empty set to represent cart
-// const rollSet = new Set();
+// creates an empty array to represent cart
 let cartArray = [];
 
 // creates new roll objects and adds it to set
@@ -90,16 +89,13 @@ function addNewRoll(rollType, rollGlazing, packSize, basePrice) {
 }
 
 function saveToLocalStorage() {
-  const cartArray = Array.from(rollSet);
   const cartArrayString = JSON.stringify(cartArray);
   localStorage.setItem('cartItems', cartArrayString);
 }
 
 function retrieveFromLocalStorage() {
-  const cartArrayString = localStorage.getItem('cartItems');
-  cartArray = JSON.parse(cartArrayString);
-}
- 
-if(localStorage.getItem('cartItems') != null) {
-    retrieveFromLocalStorage();
+  if(localStorage.getItem('cartItems') != null) {
+    const cartArrayString = localStorage.getItem('cartItems');
+    cartArray = JSON.parse(cartArrayString);
+  }
 }

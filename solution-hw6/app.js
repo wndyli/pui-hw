@@ -89,6 +89,6 @@ function addRollToCart() {
     saveToLocalStorage();
 
     // print entire cart array to the console after everytime adding items
-    console.log(cartArrayx);
+    console.log(cartArray);
 }
 

@@ -72,7 +72,7 @@ class Roll {
       this.type = rollType; 
       this.glazing = rollGlazing;
       this.size = packSize;
-      this.basePrice = basePrice.toFixed(2);
+      this.basePrice = basePrice;
 
       this.element = null;
   }
@@ -81,22 +81,15 @@ class Roll {
 // creates an empty set to represent cart
 const rollSet = new Set();
 
+// creates new roll objects and adds it to set
+function addNewRoll(rollType, rollGlazing, packSize, basePrice) {
+  const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
+  rollSet.add(roll);
+  return roll;
+}
+
 function saveToLocalStorage() {
   const cartArray = Array.from(rollSet);
   const cartArrayString = JSON.stringify(cartArray);
   localStorage.setItem('cartItems', cartArrayString);
-}
-
-function retrieveFromLocalStorage() {
-  const cartArrayString = localStorage.getItem('cartItems');
-  const cartArray = JSON.parse(cartArrayString);
-
-  for(const cartData of cartArray) {
-    const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
-    createElement(currRoll);
-  }
-}
- 
-if(localStorage.getItem('cartItems') != null) {
-    retrieveFromLocalStorage();
 }

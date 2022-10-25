@@ -1,10 +1,3 @@
-// creates new roll objects and adds it to set
-function addNewRoll(rollType, rollGlazing, packSize, basePrice) {
-    const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
-    rollSet.add(roll);
-    return roll;
-}
-
 // takes cart html and duplicates the template
 function createElement(roll) {
     const template = document.querySelector('#roll-template');
@@ -91,3 +84,17 @@ function cartTotalPrice() {
 
 // calls to calculate price
 cartTotalPrice();
+
+function retrieveFromLocalStorage() {
+    const cartArrayString = localStorage.getItem('cartItems');
+    const cartArray = JSON.parse(cartArrayString);
+  
+    for(const cartData of cartArray) {
+      const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+      createElement(currRoll);
+    }
+  }
+   
+  if(localStorage.getItem('cartItems') != null) {
+      retrieveFromLocalStorage();
+  }

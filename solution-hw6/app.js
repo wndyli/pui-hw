@@ -73,7 +73,7 @@ function onSelectValueChange() {
 }
 
 // create an empty array called cart
-let cart = [];
+//let cart = [];
 
 let addToCartButton = document.querySelector('#hitcheckout');
 addToCartButton.addEventListener("click", addRollToCart);
@@ -87,7 +87,7 @@ function addRollToCart() {
     let packOption = allPackSize[packIndex];
 
     let selectedRoll = new Roll(rollType, glazingOption.glazing, packOption.packSize, basePrice);
-    cart.push(selectedRoll);
+    rollSet.add(selectedRoll);
 
     saveToLocalStorage();
 

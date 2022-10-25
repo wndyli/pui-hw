@@ -69,6 +69,11 @@ function deleteElement(roll) {
     saveToLocalStorage();
 }
 
+for(const cartData of cartArray) {
+    const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+    createElement(currRoll);
+  }
+
 // calculates the total checkout price
 function cartTotalPrice() {
     retrieveFromLocalStorage();
@@ -84,17 +89,3 @@ function cartTotalPrice() {
 
 // calls to calculate price
 cartTotalPrice();
-
-function retrieveFromLocalStorage() {
-    const cartArrayString = localStorage.getItem('cartItems');
-    const cartArray = JSON.parse(cartArrayString);
-  
-    for(const cartData of cartArray) {
-      const currRoll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
-      createElement(currRoll);
-    }
-  }
-   
-  if(localStorage.getItem('cartItems') != null) {
-      retrieveFromLocalStorage();
-  }

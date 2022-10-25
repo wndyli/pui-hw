@@ -79,17 +79,27 @@ class Roll {
 }
 
 // creates an empty set to represent cart
-const rollSet = new Set();
+// const rollSet = new Set();
+let cartArray = [];
 
 // creates new roll objects and adds it to set
 function addNewRoll(rollType, rollGlazing, packSize, basePrice) {
   const roll = new Roll(rollType, rollGlazing, packSize, basePrice);
-  rollSet.add(roll);
-  return roll;
+  cartArray.push(roll);
+  return roll;  
 }
 
 function saveToLocalStorage() {
   const cartArray = Array.from(rollSet);
   const cartArrayString = JSON.stringify(cartArray);
   localStorage.setItem('cartItems', cartArrayString);
+}
+
+function retrieveFromLocalStorage() {
+  const cartArrayString = localStorage.getItem('cartItems');
+  cartArray = JSON.parse(cartArrayString);
+}
+ 
+if(localStorage.getItem('cartItems') != null) {
+    retrieveFromLocalStorage();
 }

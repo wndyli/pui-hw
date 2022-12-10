@@ -1,5 +1,5 @@
 # PUI homework
 
-Deployed website: https://wndyli.github.io/pui-hw/solution-hw6/
+Deployed website: https://wndyli.github.io/pui-hw/final-project/
 
 Repository link: https://github.com/wndyli/pui-hw

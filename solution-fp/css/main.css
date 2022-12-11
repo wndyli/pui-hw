@@ -9,7 +9,7 @@ body {
   text-transform:uppercase;
   letter-spacing:2px;
   
-  background-image:url('assets/web-bg2.png');
+  background-image:url('../assets/web-bg2.png');
   background-repeat:no-repeat;
   background-size:100% 101%;
 }
@@ -88,6 +88,10 @@ body {
   opacity:0;
   transform:translateY(50px);
   transition:all 1s ease-out;
+}
+
+#main-3 {
+  padding-bottom:75px;
 }
 
 #main-1.fade-in, #main-2.fade-in, #main-3.fade-in {

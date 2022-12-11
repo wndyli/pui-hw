@@ -39,6 +39,7 @@ body {
   }
 }
 
+/* logo */
 .openpage-logo {
   width:100px;
 }
@@ -49,6 +50,7 @@ body {
   }
 }
 
+/* main title */
 h1 {
   margin:105px 0px;
   letter-spacing:20px;
@@ -69,6 +71,7 @@ h1:hover, h1:focus, h1:active {
   transform: scale(1.05);
 }
 
+/* button */
 .button-section {
   width:50%;
   display:flex;

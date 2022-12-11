@@ -1,31 +1,3 @@
-body {
-  margin:0px;
-  padding:0px;
-        
-  font-family:'Cormorant Garamond';
-  color:#fff;
-  text-align:center;
-  letter-spacing:2px;
-}
-     
-#container {
-  width:auto;
-  margin:auto;
-  padding:40px;
-}
-      
-@media (min-width:769px) {
-  #container {
-    width:1200px;
-  }
-}
-      
-@media (max-width: 520px) {
-  #container {
-    width:auto;
-  }
-}
-
 /* gallery modified from this tutorial:
 https://www.w3schools.com/howto/howto_js_slideshow.asp */
 

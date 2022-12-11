@@ -1,0 +1,76 @@
+/* file containts all colors for various pages */
+
+.footer {
+  margin-top:200px;
+  padding:20px;
+}
+
+.beyond {
+  background-image:linear-gradient(#b081b5, #763168);
+}
+
+.beyond-footer {
+  background:#b081b5;
+}
+
+.wandering {
+  background-image:linear-gradient(#8996bc, #1d4782);
+}
+
+.wandering-footer {
+  background:#8996bc;
+}
+
+.thepath {
+  background-image:linear-gradient(#6a4040, #362330);
+}
+
+.thepath-footer {
+  background:#6a4040;
+}
+
+.perennial {
+  background-image:linear-gradient(#576e89, #303153);
+}
+
+.perennial-footer {
+  background:#555a84;
+}
+
+.characters {
+  background-image: linear-gradient(#6063a3, #7e497c);
+}
+
+.characters-footer {
+  background:#8d60a3;
+}
+
+.kin {
+  background-image:linear-gradient(#434c68, #242542);
+}
+
+.kin-footer {
+  background:#434c68;
+}
+
+.aoshin {
+  background-image:linear-gradient(#55829b, #2e4f64);
+}
+
+.aoshin-footer {
+  background:#55829b;
+}
+
+.gallery {
+  background-image: linear-gradient(#83509b, #6b3664);
+}
+
+.gallery-footer {
+  background:#83509b;
+}
+
+@media (max-width: 520px) {
+  .footer {
+    margin-top:75px;
+  }
+}
